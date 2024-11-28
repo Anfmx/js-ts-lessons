@@ -1,0 +1,74 @@
+// Файл
+
+@import "nullstyle.scss";
+
+body{
+	font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+	background-color: rgb(52, 49, 52);
+	color: white;
+	padding: 4rem;
+	overflow: hidden;
+}
+
+
+h1, h2{
+	max-width: 60rem;
+	margin: 0 0 1rem 0;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
+}
+
+h2{
+	letter-spacing: 0;
+}
+
+a{
+	color: rgba(0, 120, 71, 0.7);
+}
+
+h1{
+	span{
+		color: yellow;
+	}
+}
+
+.yellow{
+	color: yellow;
+}
+
+.lesson {
+	font-weight: 700;
+	&__text {}
+	&__list {
+		margin-top: 40px;
+		li::before {
+  		content: '•'; // Задание нового маркера.
+ 		color: yellow;  // Выбор цвета маркера.
+  		padding-right: 8px; // Дистанция до текста.
+}
+	}
+	&__item-list {
+		//color:yellow;
+		padding: 10px 0 0px 0;
+		&_red {}
+		&_blue {}
+	}
+	
+	&__item-sub-list {
+		//list-style-type: circle;
+		padding: 10px 0 5px 0px;
+	}
+	&__item-sub-list:nth-last-child(1){
+		padding-bottom: 0;
+	}
+}
+
+.lesson__sub-list{
+	padding-left: 20px;
+	li::before{
+		content:"◦";
+		color:yellow;
+	}
+}
