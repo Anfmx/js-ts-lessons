@@ -1,0 +1,25 @@
+// Файл
+
+@import "nullstyle.scss";
+
+body{
+	font-family: Arial, Helvetica, "Helvetica Neue", sans-serif;
+	background-color: rgb(52, 49, 52);
+	color: white;
+	padding: 4rem;
+	overflow: hidden;
+}
+
+h1, h2{
+	margin: 0 0 1rem 0;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
+}
+
+h1{
+	span{
+		color: yellow;
+	}
+}
