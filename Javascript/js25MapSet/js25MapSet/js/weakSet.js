@@ -1,3 +1,7 @@
+
+// То же что и сет но добавляет только объекты
+// не итерируется
+// add(value), has(value), delete(value)
 const users = [
 	{name: 'Mike'},
 	{name: 'Alex'},

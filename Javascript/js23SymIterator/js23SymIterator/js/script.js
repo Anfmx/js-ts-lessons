@@ -19,19 +19,19 @@
 // const num = numberGen(7); // Порционно доходит до 6 несмотря на цикл
 
 
-// const iterator = {
-// 	[Symbol.iterator]: function(n = 10){
-// 		let i = 0;
-// 		return {
-// 			next(){
-// 				if (i < n){
-// 					return {value:++i, done: false}
-// 				}
-// 				return {value: undefined, done: true}
-// 			}
-// 		}
-// 	},
-// }
+const iterator = {
+	[Symbol.iterator]: function(n = 10){
+		let i = 0;
+		return {
+			next(){
+				if (i < n){
+					return {value:++i, done: false}
+				}
+				return {value: undefined, done: true}
+			}
+		}
+	},
+}
 
 
 function* iter(n = 10){

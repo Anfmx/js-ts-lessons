@@ -20,3 +20,4 @@ const enum Links{
 
 // Но при обращении к ним только тогда можно получить значения
 const arr = [Links.vk, Links.facebook]
+console.log(arr)

@@ -33,6 +33,6 @@ myFunc = oldFunc;
 myFunc('John')
 
 
-import { Directions } from "./enums";
+import { Directions } from "../enums/enums";
 const newUp = Directions;
-console.log(Directions.Up)
+console.log(Directions[0])

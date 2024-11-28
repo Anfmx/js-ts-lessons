@@ -43,3 +43,14 @@ function logPerson({name: firstName = 'None', age}){
     console.log(firstName + ' ' + age);
 }
 logPerson(person)
+
+let [a, b] = [2, 4]
+
+let options = {
+    title: 'title',
+    width: 100,
+    height: 200
+}
+        //Ключу объекта можно изменить имя и он ссылается на него
+let{title:titleOptions, width, height} = options;    // После равно указывать объект
+console.log(titleOptions)

@@ -1,4 +1,10 @@
 
+
+// Ключи в weakMap только объекты (примитивы не могут быть ключами в weakMap)
+// недоступны многие методы объектов и переборы
+// присутсвуют только следующие методы
+// get(key), set(key, value), delete(key), has(key)
+
 let obj = {name: 'weakmap'}
 
 // const arr = [obj];
@@ -10,8 +16,10 @@ let obj = {name: 'weakmap'}
 const map = new WeakMap([
     [obj, 'obj data']
 ])
-// get set delete has
 
+map.set({name:'weak'}, 'weak data')
+// get set delete has
+console.log(map.get(obj))
 obj = null;
 
 //=====================
