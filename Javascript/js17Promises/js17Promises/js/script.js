@@ -1,5 +1,5 @@
 //Callback hell
-/*
+
 function fetchUserInfo(callback){
 	setTimeout(() => {
 		/// fetch
@@ -28,9 +28,9 @@ function run() {
 }
 
 run();
-*/
 
-/*
+
+
 function fetchUserData(){
 	return new Promise((resolve, reject) =>{
 		setTimeout(() =>{
@@ -63,14 +63,14 @@ function run(){
 
 }
 run();
-*/
 
-/*
+
+
 function fetchGames(){
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			const dataFromServer = 'sdhfsdhsfhdf';
-			/*const gamesFromServer = [
+			const gamesFromServer = [
 				{id: 1, name: 'Game1',},
 				{id: 2,name: 'Game2',}
 			];
@@ -84,32 +84,32 @@ function fetchGames(){
 	})
 }
 
-function renderLoading(){
-	const body = document.querySelector('.main__items');
-	const loading = document.createElement('div');
-	loading.id = 'loading';
-	loading.textContent = 'Загрузка...';
-	body.append(loading);
-}
+// function renderLoading(){
+// 	const body = document.querySelector('.main__items');
+// 	const loading = document.createElement('div');
+// 	loading.id = 'loading';
+// 	loading.textContent = 'Загрузка...';
+// 	body.append(loading);
+// }
 
 
-function renderGames(games){
-	const body = document.querySelector('.main__items');
+// function renderGames(games){
+// 	const body = document.querySelector('.main__items');
 
-	const loading = document.querySelector('#loading');
-	loading.remove();
+// 	const loading = document.querySelector('#loading');
+// 	loading.remove();
 
-	games.forEach((game) => {
-		const gameElement = document.createElement('div');
+// 	games.forEach((game) => {
+// 		const gameElement = document.createElement('div');
 
-		gameElement.innerHTML = `Game: <span>${game.name}</span>`;
-		gameElement.className = 'game-element';
+// 		gameElement.innerHTML = `Game: <span>${game.name}</span>`;
+// 		gameElement.className = 'game-element';
 
-		body.append(gameElement);
-	})
-}
+// 		body.append(gameElement);
+// 	})
+// }
 
-renderLoading();
+// renderLoading();
 
 fetchGames()
 	.then((games) => {
@@ -121,7 +121,7 @@ fetchGames()
 	.finally(() => {
 		console.log('Ended')
 	});
-*/
+
 
 
 
@@ -157,17 +157,17 @@ function main(){
 }
 main();
 
-/*
-Promiseall - Ждет пока выполнятся все промисы, но если хоть в одном будет
-ошибка, то попадет в секцию catch
 
-Promise.allSettled - Дожидает все промисы и попадет в секцию then
-независимо будет ли ошибка в любом промисе или нет
+// Promiseall - Ждет пока выполнятся все промисы, но если хоть в одном будет
+// ошибка, то попадет в секцию catch
 
-Promise.any - Ждет первый, при этом успешный промис
+// Promise.allSettled - Дожидает все промисы и попадет в секцию then
+// независимо будет ли ошибка в любом промисе или нет
 
-Promise.race - Ждет первый выполненный промис, однако
-если тот будет с ошибкой то перейдет в секцию catch, если успешно
-то в then
-*/
+// Promise.any - Ждет первый, при этом успешный промис
+
+// Promise.race - Ждет первый выполненный промис, однако
+// если тот будет с ошибкой то перейдет в секцию catch, если успешно
+// то в then
+
 

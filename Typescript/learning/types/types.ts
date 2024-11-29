@@ -51,7 +51,7 @@ function infiniteLoop():never{
 // error()
 
 //object (объекты)
-const create = (o:object | null):void => { }
+const create = (o:object | null):void => { console.log(o) }
 create({})
 
 

@@ -2,21 +2,21 @@
 //const button = document.querySelectorAll('.button');
 
 
-/* 
+
 button.onclick = function(){
 	console.log('Click!');		//При присвоении других значений они перезаписываются
-}*/
+}
 
 
 //addEventList
-/*
+
 button.addEventListener("click", function (e) {
 	console.log("Click!");
 });
 button.addEventListener("click", function (e){
 	console.log("Clack!");
 });	//Добавляется два события
-*/
+
 
 
 function showConsole(){
@@ -58,11 +58,11 @@ const blockInner = document.querySelector('.block2');
 const blockInnerInner = document.querySelector('.block3');
 
 //Изначально произойдет всплытие
-/*
-Всыплытие это когда на элементе происходит событие
-обработчики сначала срабатывают на нем, потом на его родителе
-затем выше и так далее, вверх по цепочке предков
-*/
+
+// Всыплытие это когда на элементе происходит событие
+// обработчики сначала срабатывают на нем, потом на его родителе
+// затем выше и так далее, вверх по цепочке предков
+
 block.addEventListener("click", function(event){
 	console.log('Click on block');
 });
@@ -76,24 +76,24 @@ blockInnerInner.addEventListener("click", function(event){
 	//Остановка всплытия
 	//event.stopPropagation();
 });
-/*
-В совремнной разработке стадия погружения используется редко
-обычно события обрабатываются во время всплытия
-*/
+
+// В совремнной разработке стадия погружения используется редко
+// обычно события обрабатываются во время всплытия
+
 
 //Делегирование
-/*
-За то, что первое снизу, вас будут палками на проекте бить (тк обработчик на каждый кнопке
-то он сильно нагружает браузер и саму систему)
-*/
-/*
+
+// За то, что первое снизу, вас будут палками на проекте бить (тк обработчик на каждый кнопке
+// то он сильно нагружает браузер и саму систему)
+
+
 function showConsole3(){
 	console.log("Hurray!");
 }
 button.forEach((buttonItem) => {
 	buttonItem.addEventListener("click", showConsole3);
 });
-*/
+
 
 const wrapper = document.querySelector(".wrapper");
 
@@ -129,46 +129,46 @@ link.addEventListener("click", function(event){
 	event.preventDefault();
 	
 }, {"passive": true});
-/*
-	параметр passive со значение true сигнализирует что
-	обработчик не собирается выполнять preventDefault(отменять действие браузера)
-*/
+
+// параметр passive со значение true сигнализирует что
+// обработчик не собирается выполнять preventDefault(отменять действие браузера)
+
 
 
 //Либо
-/*
+
 link.onclick = function () {
 	console.log("Our action");
 	//Отмена действия
 	return false;
 }
-*/
+
 
 //Типы событий
-/*
 
-mousedown/ mouseup - Кнопка мыши нажата / отпущена над элементом
 
-mouseover / mouseout - Курсор мыши появляется над элементом и уходит с него
+// mousedown/ mouseup - Кнопка мыши нажата / отпущена над элементом
 
-mousemove - Каждое движение мыши над элементом герирует это событие.
+// mouseover / mouseout - Курсор мыши появляется над элементом и уходит с него
 
-contextmenu - Вызов при открытии контекстного меню, как правило 
-нажатием правой кнопки мыши. Но не совсем событие мыши тк может 
-вызвываться и с помощью клавиатуры
+// mousemove - Каждое движение мыши над элементом герирует это событие.
 
-*/
+// contextmenu - Вызов при открытии контекстного меню, как правило 
+// нажатием правой кнопки мыши. Но не совсем событие мыши тк может 
+// вызвываться и с помощью клавиатуры
+
+
 
 //Комплексные события
-/*
 
-click - вызывается при mousedown, а затем mouseup над одним
-и тем же элементом, если использовалась основная кнопка мыши
 
-dbclick - вызывается двойным кликом на элемент
+// click - вызывается при mousedown, а затем mouseup над одним
+// и тем же элементом, если использовалась основная кнопка мыши
 
-Комплексные события состоят из простых
-*/
+// dbclick - вызывается двойным кликом на элемент
+
+// Комплексные события состоят из простых
+
 const button = document.querySelector('.button');
 button.addEventListener("mousedown", function(event){
 	console.log(`Нажата кнопка ${event.which}`);
@@ -195,7 +195,7 @@ blockForMouse.addEventListener("mouseout", function(event){
 });
 
 
-/*
+
 //События mouse(over/out), relatedTarget
 blockForMouse.addEventListener("mouseover", function(event){
 	//Для mouseover
@@ -209,9 +209,9 @@ blockForMouse.addEventListener("mouseout", function(event){
 	console.log(event.target);
 	console.log(event.relatedTarget);
 });
-*/
 
-/*
+
+
 //События mouseenter и mouseleave
 //При переходе на дочерние объекты они не считаются и не сплывают
 blockForMouse.addEventListener("mouseenter", function(event){
@@ -220,35 +220,35 @@ blockForMouse.addEventListener("mouseenter", function(event){
 blockForMouse.addEventListener("mouseleave", function(event){
 	console.log(`Курсор уходит с элемента`);
 });
-*/
+
 
 //События клавиатуры
 
 //keydown и keyup. event.code и event.key
-/*
+
 document.addEventListener("keydown", function(event){
 	console.log(`Нажата клавиша ${event.code} (${event.key})`);
 });
 document.addEventListener("keyup", function(event){
 	console.log(`Отжата клавиша ${event.code} (${event.key})`);
-});*/
+});
 
 //event.code удобен где нужны сочетания клавиш
-/*
+
 document.addEventListener("keydown", function(event){
 	if(event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)){
 		console.log("Отмена действия");
 	}
 });
-*/
-/*
+
+
 //event.repeat
 document.addEventListener("keydown", function(event){
 	console.log(`Нажата клавиша ${event.code} (${event.key})`);
 	console.log(event.repeat);
 	//Вовзращает true если зажать клавишу(срабатывает автоповтор и это норм)
 	});
-*/
+
 
 
 //Счетчик символов в поле ввода!
@@ -270,13 +270,13 @@ txtItem.addEventListener("keyup", txtSetCounter);
 //Скролл
 
 window.addEventListener("scroll", function(event){
-	/*
-	кол-во прокрученных пикселей по вертикали
-	scrollY или pageYOffset(Устарел)
+	
+	// кол-во прокрученных пикселей по вертикали
+	// scrollY или pageYOffset(Устарел)
 
-	Кол-во прокрученных пикселей по горизонтали
-	scrollX или pageXOffset(Устарел)
-	*/
+	// Кол-во прокрученных пикселей по горизонтали
+	// scrollX или pageXOffset(Устарел)
+	
 	console.log(`${Math.round(parseInt(scrollY))}px`); //Кол-во прокрученных пикселей
 });
 //Прокрутку нельзя отменить используя preventDefault (сработает после того как скролл произойдет)
@@ -284,24 +284,24 @@ window.addEventListener("scroll", function(event){
 //IntersectionObserver более оптимизирован и реагирует при приодолении определенной линии
 
 //События загрузки страницы
-/*
-
-DOMContentLoaded - браузер полностью загрузил HTML, было построено DOM дерево,
-но внешние ресурсы, такие как картинки <img> и стили, могут быть еще не загружены
-load - браузер загрузил HTML и внешние ресурсы (картинки, стили и тд)
-beforeunload/ unload - пользователь покидает страницу
 
 
-document.readyState - состояние загрузки
+// DOMContentLoaded - браузер полностью загрузил HTML, было построено DOM дерево,
+// но внешние ресурсы, такие как картинки <img> и стили, могут быть еще не загружены
+// load - браузер загрузил HTML и внешние ресурсы (картинки, стили и тд)
+// beforeunload/ unload - пользователь покидает страницу
 
-Есть три возможных значения:
-"loading" - документ загружается
 
-"interactive" - документ был полностью прочитан
+// document.readyState - состояние загрузки
 
-"complete" - документ был полностью прочитан и
-все ресурсы(такие как изображения) были тоже загружены
-*/
+// Есть три возможных значения:
+// "loading" - документ загружается
+
+// "interactive" - документ был полностью прочитан
+
+// "complete" - документ был полностью прочитан и
+// все ресурсы(такие как изображения) были тоже загружены
+
 
 //DOMContentLoaded срабатывает на объекте document (документ сайта)
 //Событие load срабатывает на объекте window (окно браузера)
@@ -315,10 +315,10 @@ window.addEventListener("beforeunload", function beforeUnload(event){
 
 //unload
 window.addEventListener("unload", function (e){
-	/*
-	Отправка статистики в фоновом режиме и тд
-	Браузер в фоновом режиме выполняет еще что-то
-	*/
+	
+	// Отправка статистики в фоновом режиме и тд
+	// Браузер в фоновом режиме выполняет еще что-то
+	
 });
 
 
@@ -334,10 +334,10 @@ function showForm(event){
 }
 
 document.addEventListener("click", showForm);
-/*
+
 document.addEventListener("keydown", event => {
 	const keyName = event.key;
-})*/
+})
 
 document.addEventListener("keydown", event => {
 	const keyName = event.key;

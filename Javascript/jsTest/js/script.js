@@ -11,13 +11,13 @@
 // }
 // console.log(factorial(13))
 
-// let arr = [1, 2, 3, 4, 4, 5, 5, 6]
+let arr = [1, 2, 3, 4, 4, 5, 5, 6]
 
-// let newArr = new Set();
-// for(let i = 0; i<arr.length;i++){
-//     newArr.add(arr[i])
-// }
-// console.log([...newArr])
+let newArr = new Set();
+for(let i = 0; i<arr.length;i++){
+    newArr.add(arr[i])
+}
+console.log([...newArr])
 
 Array.prototype.uniqueValue = function() {
     let list = new Set();
@@ -28,5 +28,3 @@ Array.prototype.uniqueValue = function() {
 }
 
 console.log([1, 2, 2, 3, 4, 5, 5, 5].uniqueValue())
-
-
