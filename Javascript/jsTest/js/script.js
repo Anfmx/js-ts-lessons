@@ -28,3 +28,41 @@ Array.prototype.uniqueValue = function() {
 }
 
 console.log([1, 2, 2, 3, 4, 5, 5, 5].uniqueValue())
+
+
+
+// function countSheep(sheep){
+//     if(sheep === undefined || sheep === null) 0;
+//     return sheep.filter(count => count === true).length
+// }
+
+// console.log(countSheep([true, false, ]))
+
+
+// function gooseFilter(birds) {
+//     let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+//     return birds.filter(item => !geese.includes(item))    
+// }
+
+// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]))
+
+
+function firstNonConsecutive (arr) {
+    return arr.reduce((acc, current) => {
+        if(!(current - acc)){
+            return current
+        }
+    })
+}
+
+
+
+function gimme (triplet) {
+    const max = Math.max(...triplet);
+    const min = Math.min(...triplet);
+    return triplet.findIndex(item => item < max && item > min)
+}
+console.log(gimme([-1, -5, 10]))
+
+
+console.log(firstNonConsecutive([1,2,3,4, 7, 8, 9]))
