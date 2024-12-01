@@ -64,3 +64,78 @@ console.log(gimme([-1, -5, 10]))
 
 
 console.log(firstNonConsecutive([1,2,3,4, 7, 8, 9]))
+
+
+function isUnique(str){
+    str = str.split('').sort().join('')
+    for(let i = 0; i < str.length - 1; i++){
+        if(str[i] === str[i+1]){
+            return false;
+        }
+    }
+    return true
+}
+console.log(isUnique('1253455'))
+
+strTest = 'world'
+console.log(strTest[0]) // Элемент строки можно получать также как из массива
+
+function reverseString(str){
+    let newStr = ''
+    for(let i = str.length - 1; i >= 0; --i){
+        newStr += str[i]
+    }
+    return newStr;
+}
+console.log(reverseString('hello'))
+
+
+// function firstUniqChar(str) {
+//     let countMap = new Map();
+
+//     for (let i = 0; i < str.length; i++) {
+//         if (countMap.has(str[i])) {
+//             countMap.set(str[i], countMap.get(str[i]) + 1); // Увеличиваем счетчик
+//         } else {
+//             countMap.set(str[i], 1);
+//         }
+//     }
+//     console.log(countMap)
+//     for (let i = 0; i < str.length; i++) {
+//         if (countMap.get(str[i]) === 1) {
+//             return str[i]; // Возвращаем первый уникальный символ
+//         }
+//     }
+
+//     return -1; // Если нет уникальных символов
+// }
+// console.log(firstUniqChar('swiss'))
+
+
+let testObject = {
+    'a': 3,
+    'b': 4
+}
+console.log(testObject['a'])
+
+
+function isValid(s) {
+    let stack = [];
+    let map = { '(': ')', '{': '}', '[': ']' };
+    console.log(map['('])
+    for (let char of s) {
+        if (map[char]) {
+            // Если это открывающая скобка, добавляем в стек
+            stack.push(char);
+        } else {
+            // Если это закрывающая скобка, проверяем, что она соответствует последней открытой
+            if (stack.length === 0 || map[stack.pop()] !== char) {
+                return false;
+            }
+        }
+    }
+
+    // Если стек пуст, все скобки сбалансированы
+    return stack.length === 0;
+}
+console.log(isValid('([)]'))
