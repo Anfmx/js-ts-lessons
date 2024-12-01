@@ -64,9 +64,3 @@ console.log(gimme([-1, -5, 10]))
 
 
 console.log(firstNonConsecutive([1,2,3,4, 7, 8, 9]))
-
-
-
-let array = ["a", "b", "a", "c", "a", "d"];
-let idx = array.indexOf(element);
-console.log(idx)
