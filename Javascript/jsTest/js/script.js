@@ -58,11 +58,15 @@ function firstNonConsecutive (arr) {
 
 
 function gimme (triplet) {
-    const max = Math.max(...triplet);
-    const min = Math.min(...triplet);
-    return triplet.findIndex(item => item < max && item > min)
+    return triplet.findIndex(item => item < Math.max(...triplet) && item > Math.min(...triplet))
 }
 console.log(gimme([-1, -5, 10]))
 
 
 console.log(firstNonConsecutive([1,2,3,4, 7, 8, 9]))
+
+
+
+let array = ["a", "b", "a", "c", "a", "d"];
+let idx = array.indexOf(element);
+console.log(idx)
