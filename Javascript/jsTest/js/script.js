@@ -75,7 +75,7 @@ function isUnique(str){
     }
     return true
 }
-console.log(isUnique('1253455'))
+console.log(isUnique('123'))
 
 strTest = 'world'
 console.log(strTest[0]) // Элемент строки можно получать также как из массива
@@ -90,26 +90,26 @@ function reverseString(str){
 console.log(reverseString('hello'))
 
 
-// function firstUniqChar(str) {
-//     let countMap = new Map();
+function firstUniqChar(str) {
+    let countMap = new Map();
 
-//     for (let i = 0; i < str.length; i++) {
-//         if (countMap.has(str[i])) {
-//             countMap.set(str[i], countMap.get(str[i]) + 1); // Увеличиваем счетчик
-//         } else {
-//             countMap.set(str[i], 1);
-//         }
-//     }
-//     console.log(countMap)
-//     for (let i = 0; i < str.length; i++) {
-//         if (countMap.get(str[i]) === 1) {
-//             return str[i]; // Возвращаем первый уникальный символ
-//         }
-//     }
+    for (let i = 0; i < str.length; i++) {
+        if (countMap.has(str[i])) {
+            countMap.set(str[i], countMap.get(str[i]) + 1); // Увеличиваем счетчик
+        } else {
+            countMap.set(str[i], 1);
+        }
+    }
+    console.log(countMap)
+    for (let i = 0; i < str.length; i++) {
+        if (countMap.get(str[i]) === 1) {
+            return str[i]; // Возвращаем первый уникальный символ
+        }
+    }
 
-//     return -1; // Если нет уникальных символов
-// }
-// console.log(firstUniqChar('swiss'))
+    return -1; // Если нет уникальных символов
+}
+console.log(firstUniqChar('swiss'))
 
 
 let testObject = {
@@ -139,3 +139,23 @@ function isValid(s) {
     return stack.length === 0;
 }
 console.log(isValid('([)]'))
+
+var isAnagram = function(test, original) {
+    const normalize = (str) => str.toLowerCase().split('').sort().join('');
+    return normalize(test) === normalize(original);
+};
+
+console.log(isAnagram('foefet', 'toffee'))
+
+
+function binToDec(bin) {
+    let binArr = bin.split('').map(elem => Number(elem))
+    console.log
+    let newArr = [];
+    for(let i = 0; i < binArr.length; i++){
+        newArr.push(binArr[i] * Math.pow(2, binArr.length - i - 1))
+    }
+    console.log(newArr)
+    return newArr.reduce((acc, current) => acc + current)
+}
+console.log(binToDec('1001001'))
