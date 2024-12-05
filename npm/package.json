@@ -4,7 +4,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-watch": "sass --watch . ./src"
+    "s-w": "sass --watch . ./src"
   },
   "author": "",
   "license": "ISC",
